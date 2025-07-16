@@ -1,102 +1,93 @@
+
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen flex flex-col bg-white dark:bg-[#181818] font-sans">
+      <header className="w-full py-6 px-4 flex items-center justify-between bg-gradient-to-r from-red-600 to-white dark:from-red-700 dark:to-gray-900 shadow-md">
+        <div className="flex items-center gap-3">
+          <Image src="/globe.svg" alt="Logo Perú" width={40} height={40} />
+          <span className="text-2xl font-bold text-red-700 tracking-tight">Informalidad Perú</span>
         </div>
+        <nav className="hidden md:flex gap-8 text-base font-medium">
+          <a href="#dashboard" className="hover:text-red-700 transition-colors">Dashboard</a>
+          <a href="#analisis" className="hover:text-red-700 transition-colors">Análisis</a>
+          <a href="#ia" className="hover:text-red-700 transition-colors">IA</a>
+          <a href="#herramientas" className="hover:text-red-700 transition-colors">Herramientas</a>
+        </nav>
+      </header>
+
+      <main className="flex-1 flex flex-col items-center justify-center px-4 py-12 gap-10">
+        <section className="max-w-2xl text-center flex flex-col items-center gap-6">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-red-700 mb-2">Plataforma Integral para Combatir la Informalidad</h1>
+          <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-200">
+            Usamos <span className="font-semibold text-red-700">Inteligencia Artificial</span> y datos públicos para impulsar la formalización en Perú.<br />
+            Descubre métricas, análisis geográfico, predicciones y herramientas prácticas para tu negocio.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 mt-4">
+            <a href="#dashboard" className="bg-red-700 text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-red-800 transition">Ver Dashboard</a>
+            <a href="#calculadora" className="bg-white border border-red-700 text-red-700 px-6 py-3 rounded-full font-semibold shadow hover:bg-red-50 transition">Calculadora de Beneficios</a>
+          </div>
+        </section>
+
+        <section id="dashboard" className="w-full max-w-4xl mt-12">
+          <h2 className="text-2xl font-bold text-red-700 mb-4">Métricas de Informalidad</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="bg-red-50 dark:bg-gray-900 rounded-lg p-6 flex flex-col items-center shadow">
+              <span className="text-3xl font-bold text-red-700">72%</span>
+              <span className="text-gray-700 dark:text-gray-200 mt-2">Tasa de informalidad laboral</span>
+            </div>
+            <div className="bg-red-50 dark:bg-gray-900 rounded-lg p-6 flex flex-col items-center shadow">
+              <span className="text-3xl font-bold text-red-700">18 regiones</span>
+              <span className="text-gray-700 dark:text-gray-200 mt-2">Cobertura nacional</span>
+            </div>
+            <div className="bg-red-50 dark:bg-gray-900 rounded-lg p-6 flex flex-col items-center shadow">
+              <span className="text-3xl font-bold text-red-700">+1M</span>
+              <span className="text-gray-700 dark:text-gray-200 mt-2">Empresas analizadas</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="analisis" className="w-full max-w-4xl mt-16">
+          <h2 className="text-2xl font-bold text-red-700 mb-4">Análisis Geográfico</h2>
+          <div className="bg-white dark:bg-gray-900 rounded-lg p-8 shadow flex flex-col sm:flex-row gap-8 items-center">
+            <Image src="/globe.svg" alt="Mapa Perú" width={120} height={120} />
+            <div className="flex-1 text-left">
+              <p className="text-gray-700 dark:text-gray-200 mb-2">Visualiza la informalidad por regiones y descubre dónde enfocar esfuerzos de formalización.</p>
+              <a href="#mapa" className="text-red-700 font-semibold hover:underline">Ver mapa interactivo</a>
+            </div>
+          </div>
+        </section>
+
+        <section id="ia" className="w-full max-w-4xl mt-16">
+          <h2 className="text-2xl font-bold text-red-700 mb-4">Predicciones de IA</h2>
+          <div className="bg-white dark:bg-gray-900 rounded-lg p-8 shadow flex flex-col gap-4">
+            <p className="text-gray-700 dark:text-gray-200">Nuestra IA analiza tendencias y te recomienda acciones para formalizar tu empresa.</p>
+            <a href="#recomendaciones" className="text-red-700 font-semibold hover:underline">Ver recomendaciones personalizadas</a>
+          </div>
+        </section>
+
+        <section id="herramientas" className="w-full max-w-4xl mt-16">
+          <h2 className="text-2xl font-bold text-red-700 mb-4">Herramientas para la Formalización</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="bg-red-50 dark:bg-gray-900 rounded-lg p-6 shadow flex flex-col gap-2">
+              <span className="font-semibold text-red-700">Registro Empresarial</span>
+              <span className="text-gray-700 dark:text-gray-200">Guía paso a paso para formalizar tu negocio en Perú.</span>
+            </div>
+            <div className="bg-red-50 dark:bg-gray-900 rounded-lg p-6 shadow flex flex-col gap-2">
+              <span className="font-semibold text-red-700">Calculadora de Beneficios</span>
+              <span className="text-gray-700 dark:text-gray-200">Descubre los beneficios económicos y legales de formalizarte.</span>
+            </div>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className="w-full py-6 px-4 flex flex-col sm:flex-row items-center justify-between bg-gradient-to-r from-red-600 to-white dark:from-red-700 dark:to-gray-900 mt-8">
+        <span className="text-gray-100 font-medium">&copy; 2025 Informalidad Perú. Todos los derechos reservados.</span>
+        <div className="flex gap-4 mt-2 sm:mt-0">
+          <a href="#" className="hover:underline text-gray-100">Contacto</a>
+          <a href="#" className="hover:underline text-gray-100">Privacidad</a>
+        </div>
       </footer>
     </div>
   );
